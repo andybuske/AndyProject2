@@ -22,6 +22,8 @@ app.use((req, res, next) => {    // Middleware [.use method] (must go before all
 });
 // End Middleware
 
+app.use('/users', require("./controllers/usersController.js"));
+
 app.listen(3000, () => {
     console.log('I am listening');
 });
