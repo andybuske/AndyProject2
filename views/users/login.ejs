@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Log In</title>
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <h1>Sign Up to Help Out</h1>
-
-    <form action="/users" method="post">
-        Name: <input type="text" name="name"><br><br>
+    <h1>Log In</h1>
+    <form action="/users/login" method="post">
         Username: <input type="text" name="username"><br><br>
         Password: <input type="text" name="password"><br><br>
-        <input type="submit" value="Sign Up">
+        <input type="submit" value="Log In">
     </form>
 </body>
 </html>
