@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giver Index</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+    <h1>Giver Index</h1><br><br>
+
+    <nav>
+        <a href="/givers/new">Add a New Giver</a>
+    </nav>    
+    <ul>
+        <h4>Giver Name  &nbsp&nbsp&nbsp&nbsp Note Sent </h4>
+        <% for (let i=0; i<giver.length; i++) {  %>
+            <li>
+                <a href="/givers/<%=giver[i].id%>"> <%= giver[i].givername %> </a>&nbsp&nbsp&nbsp&nbsp
+                <a href="/givers/<%=giver[i].id%>"> <%= giver[i].notesent %> </a>
+            </li>
+        <% } %>
+    </ul>
+</body>
+</html>
