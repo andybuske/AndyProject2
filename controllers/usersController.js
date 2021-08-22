@@ -29,15 +29,22 @@ router.post('/login', (req, res) => {
     User.findAll({
         where: {username: req.body.username, password: req.body.password}
     }).then((loggedUsers => {
-        res.render('users/tasks.ejs', {
-            user: loggedUsers,
-        });
+        res.redirect(`/users/tasks/${loggedUsers[0].id}`);
     }));
 });
 
-//Show Route
-router.get('/profile/:id', (req, res) => {
+//Tasks Route
+router.get('/tasks/:id', (req, res) => {
     console.log(User);
+    User.findByPk(req.params.id).then((user) => {
+        res.render('users/tasks.ejs', {
+            user: user,
+        });
+    });
+});
+
+//Profile Routes
+router.get('/profile/:id', (req, res) => {
     User.findByPk(req.params.id).then((user) => {
         res.render('users/profile.ejs', {
             user: user,
@@ -45,13 +52,23 @@ router.get('/profile/:id', (req, res) => {
     });
 });
 
+router.put('/profile/:id', (req, res) => {
+    User.update(req.body, {
+        where: {id: req.params.id},
+        returning: true,
+    }).then((user) => {
+        res.redirect(`/users/profile/${req.params.id}`);
+    });
+});
 
-
-
-
-
-
-
+//Delete Route
+router.delete('/profile/:id', (req, res) => {
+    User.destroy({
+        where: {id: req.params.id}
+    }).then(() => {
+        res.redirect('/users/');
+    });
+});
 
 
 
