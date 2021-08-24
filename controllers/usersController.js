@@ -72,7 +72,7 @@ router.put('/:id/profile', (req, res) => {
         where: {id: req.params.id},
         returning: true,
     }).then((user) => {
-        res.redirect(`/users/${req.params.id}/profile`);
+        res.redirect(`/users/${req.params.id}/tasks`);
     });
 });
 

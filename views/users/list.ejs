@@ -11,12 +11,16 @@
     <h1>Givers assigned to <%= user.name %></h1><br><br>
 
     <ul>
-        <h4>Giver Name  &nbsp&nbsp&nbsp&nbsp Address &nbsp&nbsp&nbsp&nbsp Note Sent </h4>
+        <h3 id='flex-headers'>
+            <a class="column1">Giver Name</a>
+            <a class="column2">Address</a>
+            <a class="column3">Note Sent</a>
+        </h3>
         <% for (let i=0; i<user.Givers.length; i++) {  %>
-            <li>
-                <a href="/givers/<%=user.Givers[i].id%>"> <%= user.Givers[i].givername %> </a>&nbsp&nbsp&nbsp&nbsp
-                <a> <%= user.Givers[i].address %> </a>&nbsp&nbsp&nbsp&nbsp
-                <a> <%= user.Givers[i].notesent %> </a>
+            <li id='flex-items'>
+                <a class="column1" href="/givers/<%=user.Givers[i].id%>"> <%= user.Givers[i].givername %> </a>
+                <a class="column2"> <%= user.Givers[i].address %> </a>
+                <a class="column3"> <%= user.Givers[i].notesent %> </a>
             </li>
         <% } %>
     </ul>

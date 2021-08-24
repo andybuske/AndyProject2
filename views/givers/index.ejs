@@ -11,8 +11,16 @@
     <h1>Giver Index</h1><br>
 
     <nav>
-        <a href="/givers/new">Add a New Giver</a><br><br>
-    </nav>    
+        <a href="/givers/new">Add a New Giver</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a href="/users/1/list">Andy's List</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a href="/users/2/list">April's List</a>
+    </nav>
+    <!-- <nav>
+        <%# for (let j=1; j<user.length; j++) { %>
+            <a href="/users/<%#=user[j]%>/list" > List for User Id <%#=user[j].id%> </a>
+        <%# } %>
+
+    </nav> -->
     <ul>
         
         <% for (let i=0; i<giver.length; i++) {  %>
