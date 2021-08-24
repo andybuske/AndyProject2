@@ -11,7 +11,7 @@
     <h1>Givers assigned to <%= user.name %></h1><br><br>
 
     <ul>
-        <h4>Giver Name  &nbsp&nbsp&nbsp&nbsp Assigned To &nbsp&nbsp&nbsp&nbsp Note Sent </h4>
+        <h4>Giver Name  &nbsp&nbsp&nbsp&nbsp Address &nbsp&nbsp&nbsp&nbsp Note Sent </h4>
         <% for (let i=0; i<user.Givers.length; i++) {  %>
             <li>
                 <a href="/givers/<%=user.Givers[i].id%>"> <%= user.Givers[i].givername %> </a>&nbsp&nbsp&nbsp&nbsp

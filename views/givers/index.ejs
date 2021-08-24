@@ -20,9 +20,16 @@
                 <a href="/givers/<%=giver[i].id%>"> <%= giver[i].givername %> </a><br>
                 <a> Address: <%= giver[i].address %> </a><br>
                 <a> Assigned To: <%= giver[i].userId %></a><br>
-                <a> Note Sent: <%= giver[i].notesent %> </a><br><br>
+                <a> Note Sent: 
+                    <input type="checkbox" name="notesent"
+                    <% if (giver[i].notesent === true) { %>
+                        checked
+                    <% } %>
+                    >
+                </a><br><br>
             </li>
         <% } %>
     </ul>
+   
 </body>
 </html>

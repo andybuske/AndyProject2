@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
     Giver.findAll( {
         include: [{ model: User }],
     }).then((foundGiver) => {
+        console.log(foundGiver.User);
         res.render('givers/index.ejs', {
             giver: foundGiver,
         });

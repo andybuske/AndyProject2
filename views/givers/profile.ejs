@@ -15,7 +15,12 @@
         Address: <input type="text" name="address" value='<%=giver.address%>' size=60><br><br>
         Gifts: <input type="text" name="gifts" value='<%=giver.gifts%>' size=40><br><br>
         Assigned to: <input type="text" name="userId" value='<%=giver.userId%>' size=2><br><br>
-        Note Sent: <input type="text" name="notesent" value='<%=giver.notesent%>' size=4><br><br>
+        Note Sent: 
+            <input type="checkbox" name="notesent"
+                    <% if (giver.notesent === true) { %>
+                        checked
+                    <% } %>
+                    ><br><br>
         <input type="submit" value="Save Changes">
     </form>    
     <br><br><br>
