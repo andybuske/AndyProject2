@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Giver</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+    <h1>Edit or Assign Giver: <%= giver.givername %></h1>
+
+    <form action="/givers/<%=giver.id%>?_method=PUT" method="post">
+        Giver Name: <input type="text" name="givername" value='<%=giver.givername%>' size=40><br><br>
+        Address: <input type="text" name="address" value='<%=giver.address%>' size=60><br><br>
+        Gifts: <input type="text" name="gifts" value='<%=giver.gifts%>' size=40><br><br>
+        Assigned to: <input type="text" name="userId" value='<%=giver.userId%>' size=2><br><br>
+        Note Sent: <input type="text" name="notesent" value='<%=giver.notesent%>' size=4><br><br>
+        <input type="submit" value="Save Changes">
+    </form>    
+    <br><br><br>
+    <form action="/givers/<%=giver.id%>?_method=DELETE" method="post">
+        <input type="submit" value="Delete Giver">
+    </form>
+</body>
+</html>

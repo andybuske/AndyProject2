@@ -8,17 +8,19 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <h1>Giver Index</h1><br><br>
+    <h1>Giver Index</h1><br>
 
     <nav>
-        <a href="/givers/new">Add a New Giver</a>
+        <a href="/givers/new">Add a New Giver</a><br><br>
     </nav>    
     <ul>
-        <h4>Giver Name  &nbsp&nbsp&nbsp&nbsp Note Sent </h4>
+        
         <% for (let i=0; i<giver.length; i++) {  %>
             <li>
-                <a href="/givers/<%=giver[i].id%>"> <%= giver[i].givername %> </a>&nbsp&nbsp&nbsp&nbsp
-                <a href="/givers/<%=giver[i].id%>"> <%= giver[i].notesent %> </a>
+                <a href="/givers/<%=giver[i].id%>"> <%= giver[i].givername %> </a><br>
+                <a> Address: <%= giver[i].address %> </a><br>
+                <a> Assigned To: <%= giver[i].userId %></a><br>
+                <a> Note Sent: <%= giver[i].notesent %> </a><br><br>
             </li>
         <% } %>
     </ul>

@@ -8,12 +8,17 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <h1>Givers assigned to <%= user.name >%</h1><br><br>
+    <h1>Givers assigned to <%= user.name %></h1><br><br>
 
     <ul>
-                
-    
-
+        <h4>Giver Name  &nbsp&nbsp&nbsp&nbsp Assigned To &nbsp&nbsp&nbsp&nbsp Note Sent </h4>
+        <% for (let i=0; i<user.Givers.length; i++) {  %>
+            <li>
+                <a href="/givers/<%=user.Givers[i].id%>"> <%= user.Givers[i].givername %> </a>&nbsp&nbsp&nbsp&nbsp
+                <a> <%= user.Givers[i].address %> </a>&nbsp&nbsp&nbsp&nbsp
+                <a> <%= user.Givers[i].notesent %> </a>
+            </li>
+        <% } %>
     </ul>
 </body>
 </html>

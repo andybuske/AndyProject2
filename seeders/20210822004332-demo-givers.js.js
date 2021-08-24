@@ -9,12 +9,14 @@ module.exports = {
           givername: 'Gail McCoy',
           address: '199 Stagecoach Cir.  Sun Prairie, WI 53590',
           gifts: 'shoes, clothes, books',
-          notesent: false
+          userId: 1,
+          notesent: false,
         },
         {
           givername: 'Ashley Deverwaere',
           address: null,
           gifts: 'Bluey doll',
+          userId: 2,
           notesent: false,
         },
       ],

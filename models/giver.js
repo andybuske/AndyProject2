@@ -10,14 +10,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Giver.belongsTo(models.User, { foreignKey: 'userId' })
     }
   };
   Giver.init({
     givername: DataTypes.STRING,
     address: DataTypes.STRING,
     gifts: DataTypes.STRING,
-    notesent: DataTypes.BOOLEAN
+    userId: DataTypes.INTEGER,
+    notesent: DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'Giver',
