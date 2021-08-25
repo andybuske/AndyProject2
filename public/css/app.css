@@ -35,3 +35,9 @@ li {
 #ids {
     font-size: 90%;
 }
+
+#user-index-body {
+    background-image: url('https://images.freeimages.com/images/large-previews/aff/gift-1177512.jpg');
+    background-color: wheat;
+    background-repeat:no-repeat;
+}
