@@ -9,10 +9,22 @@ const User = require('../models').User;
 router.get('/', (req, res) => {
     Giver.findAll( {
         include: [{ model: User }],
+        order: [
+            ['givername', 'ASC'],
+        ],
     }).then((foundGiver) => {
-        console.log(foundGiver.User);
-        res.render('givers/index.ejs', {
+        console.log(foundGiver);
+        User.findAll( {
+            order: [
+                ['id', 'ASC'],
+            ],
+        }).then((allUsers) => {
+            console.log(allUsers);
+            res.render('givers/index.ejs', {
             giver: foundGiver,
+            user: allUsers,
+            });
+        
         });
     });
 });
@@ -28,16 +40,30 @@ router.post('/', (req, res) => {
     });
 });
 
+//Unassigned Route
+router.get('/unassigned', (req, res) => {
+    Giver.findAll( {
+        where: { userId: null },
+    }).then((unassignedGiver) => {
+        res.render('givers/unassigned.ejs', {
+            giver: unassignedGiver,
+        });
+    });
+});
+
 //Show/Edit Giver Routes
 router.get('/:id', (req, res) => {
     Giver.findByPk(req.params.id, {
         include: [{ model: User }],
     }).then((foundGiver) => {
         console.log(foundGiver)
-          res.render('givers/profile.ejs', {
-            giver: foundGiver,  
-          });
+        User.findAll().then((allUsers) => {
+            res.render('givers/profile.ejs', {
+            giver: foundGiver,
+            users: allUsers,
+            }); 
         });
+    });
 });
 
 router.put('/:id', (req, res) => {

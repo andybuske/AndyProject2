@@ -14,7 +14,12 @@
         Giver Name: <input type="text" name="givername" value='<%=giver.givername%>' size=40><br><br>
         Address: <input type="text" name="address" value='<%=giver.address%>' size=60><br><br>
         Gifts: <input type="text" name="gifts" value='<%=giver.gifts%>' size=40><br><br>
-        Assigned to: <input type="text" name="userId" value='<%=giver.userId%>' size=2><br><br>
+        Assigned to ID: <input type="text" name="userId" value='<%=giver.userId%>' size=2><br><br>
+                <a id='idList'>Valid User IDs &nbsp&nbsp&nbsp
+                <% for (let j=0; j< users.length; j++) { %>
+                    <a id='ids'> Name:<%=users[j].name%> ID:<%=users[j].id%> </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <% } %><br><br>
+                </a>
         Note Sent: 
             <input type="checkbox" name="notesent"
                     <% if (giver.notesent === true) { %>

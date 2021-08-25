@@ -11,25 +11,25 @@
     <h1>Giver Index</h1><br>
 
     <nav>
-        <a href="/givers/new">Add a New Giver</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <a href="/users/1/list">Andy's List</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <a href="/users/2/list">April's List</a>
+        <a href="/givers/new">Add a New Giver</a><br><br>
     </nav>
-    <!-- <nav>
-        <%# for (let j=1; j<user.length; j++) { %>
-            <a href="/users/<%#=user[j]%>/list" > List for User Id <%#=user[j].id%> </a>
-        <%# } %>
-
-    </nav> -->
-    <ul>
+    <nav>
+        <% for (let j=0; j< user.length; j++) { %>
+            <a href="/users/<%=j%>/list" > List for <%=user[j].name%> (User ID: <%=user[j].id%>) </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <% } %>
+            <a href="/givers/unassigned">Unassigned Givers</a>
+    </nav>
+       
+        <br><br>
+    <ol>
         
         <% for (let i=0; i<giver.length; i++) {  %>
             <li>
                 <a href="/givers/<%=giver[i].id%>"> <%= giver[i].givername %> </a><br>
                 <a> Address: <%= giver[i].address %> </a><br>
-                <a> Assigned To: <%= giver[i].userId %></a><br>
+                <a> Assigned To User ID: <%= giver[i].userId %></a><br>
                 <a> Note Sent: 
-                    <input type="checkbox" name="notesent"
+                    <input type="checkbox" disabled="disabled" name="notesent"
                     <% if (giver[i].notesent === true) { %>
                         checked
                     <% } %>
@@ -37,7 +37,7 @@
                 </a><br><br>
             </li>
         <% } %>
-    </ul>
+    </ol>
    
 </body>
 </html>

@@ -27,3 +27,11 @@ li {
     padding-bottom:5px;
 }
 
+#idList {
+    margin-left: 15px;
+    font-size: 80%;
+}
+
+#ids {
+    font-size: 90%;
+}
