@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
             console.log(allUsers);
             res.render('givers/index.ejs', {
             giver: foundGiver,
-            user: allUsers,
+            users: allUsers,
             });
         
         });

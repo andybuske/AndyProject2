@@ -14,8 +14,8 @@
         <a href="/givers/new">Add a New Giver</a><br><br>
     </nav>
     <nav>
-        <% for (let j=0; j< user.length; j++) { %>
-            <a href="/users/<%=j%>/list" > List for <%=user[j].name%> (User ID: <%=user[j].id%>) </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <% for (let j=0; j< users.length; j++) { %>
+            <a href="/users/<%=users[j].id%>/list" > List for <%=users[j].name%> (User ID: <%=users[j].id%>) </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         <% } %>
             <a href="/givers/unassigned">Unassigned Givers</a>
     </nav>
